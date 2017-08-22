@@ -2,7 +2,9 @@
 /* IMPORT */
 
 import * as _ from 'lodash';
+import * as findUp from 'find-up';
 import * as fs from 'fs';
+import * as path from 'path';
 import * as vscode from 'vscode';
 import * as Commands from './commands';
 
@@ -37,6 +39,24 @@ const Utils = {
         return true;
       } catch ( e ) {
         return false;
+      }
+
+    },
+
+    async getWrapperPath ( rootPath, findPath ) {
+
+      const foundPath = await findUp ( findPath, { cwd: rootPath } );
+
+      if ( foundPath ) {
+
+        const wrapperPath = path.dirname ( foundPath );
+
+        if ( wrapperPath.startsWith ( rootPath ) ) {
+
+          return wrapperPath;
+
+        }
+
       }
 
     }
