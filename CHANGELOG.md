@@ -1,3 +1,6 @@
+### Version 1.1.1
+- Fixed resursing walk up
+
 ### Version 1.1.0
 - Added support for walking up the tree
 

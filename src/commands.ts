@@ -15,7 +15,7 @@ async function open () {
 
   if ( !rootPath ) return vscode.window.showErrorMessage ( 'You have to open a project before being able to open it in GitTower' );
 
-  let projectPath = await Utils.folder.getWrapperPath ( rootPath, '.git' );
+  let projectPath = await Utils.folder.getWrapperPath ( rootPath, rootPath, '.git' );
 
   if ( !projectPath ) { // Walk upwards from the currently open file
 
@@ -25,7 +25,7 @@ async function open () {
 
     if ( folderPath ) {
 
-      projectPath = await Utils.folder.getWrapperPath ( folderPath, '.git' );
+      projectPath = await Utils.folder.getWrapperPath ( rootPath, folderPath, '.git' );
 
     }
 

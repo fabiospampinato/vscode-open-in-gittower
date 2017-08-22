@@ -43,9 +43,9 @@ const Utils = {
 
     },
 
-    async getWrapperPath ( rootPath, findPath ) {
+    async getWrapperPath ( rootPath, cwdPath, findPath ) {
 
-      const foundPath = await findUp ( findPath, { cwd: rootPath } );
+      const foundPath = await findUp ( findPath, { cwd: cwdPath } );
 
       if ( foundPath ) {
 
