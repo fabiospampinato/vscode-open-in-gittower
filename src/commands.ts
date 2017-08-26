@@ -1,9 +1,7 @@
 
 /* IMPORT */
 
-import * as absolute from 'absolute';
 import * as openPath from 'open';
-import * as path from 'path';
 import * as vscode from 'vscode';
 import Utils from './utils';
 
@@ -11,25 +9,13 @@ import Utils from './utils';
 
 async function open () {
 
-  const {rootPath} = vscode.workspace;
+  const {activeTextEditor} = vscode.window,
+        editorPath = activeTextEditor && activeTextEditor.document.fileName,
+        rootPath = Utils.folder.getRootPath ( editorPath );
 
   if ( !rootPath ) return vscode.window.showErrorMessage ( 'You have to open a project before being able to open it in GitTower' );
 
-  let projectPath = await Utils.folder.getWrapperPath ( rootPath, rootPath, '.git' );
-
-  if ( !projectPath ) { // Walk upwards from the currently open file
-
-    const {activeTextEditor} = vscode.window,
-          editorPath = activeTextEditor && activeTextEditor.document.fileName,
-          folderPath = editorPath && absolute ( editorPath ) && path.dirname ( editorPath );
-
-    if ( folderPath ) {
-
-      projectPath = await Utils.folder.getWrapperPath ( rootPath, folderPath, '.git' );
-
-    }
-
-  }
+  const projectPath = await Utils.folder.getWrapperPathOf ( rootPath, editorPath || rootPath, '.git' );
 
   if ( projectPath ) {
 
@@ -37,7 +23,7 @@ async function open () {
 
   } else {
 
-    vscode.window.showErrorMessage ( 'The project needs to be a git repository for opening in GitTower' );
+    vscode.window.showErrorMessage ( 'The project needs to be a git repository for opening it in GitTower' );
 
   }
 
