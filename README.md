@@ -6,8 +6,6 @@
 
 Adds a command for opening the current project in [GitTower](https://www.git-tower.com).
 
-This extension has been tested only on macOS, please open an issue if it doesn't work in Windows.
-
 ## Install
 
 Run the following in the command palette:
@@ -21,12 +19,12 @@ ext install vscode-open-in-gittower
 It adds 1 command to the command palette:
 
 ```js
-'Open in GitTower' // Opens the current project in GitTower
+'Open in GitTower' // Open the current project in GitTower
 ```
 
 ## Hits
 
-- **[Projects+](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-projects-plus)**: use this extension for managing your projects, it has GitTower support by default.
+- **[Projects+](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-projects-plus)**: use this extension for managing your projects, it comes with GitTower support.
 
 ## License
 
