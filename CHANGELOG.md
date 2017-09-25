@@ -1,3 +1,6 @@
+### Version 1.2.2
+- Fixed a Windows incompatibility
+
 ### Version 1.2.1
 - Updated readme
 
