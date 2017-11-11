@@ -10,7 +10,7 @@ import Utils from './utils';
 async function open () {
 
   const {activeTextEditor} = vscode.window,
-        editorPath = activeTextEditor && activeTextEditor.document.fileName,
+        editorPath = activeTextEditor && activeTextEditor.document.uri.fsPath,
         rootPath = Utils.folder.getRootPath ( editorPath );
 
   if ( !rootPath ) return vscode.window.showErrorMessage ( 'You have to open a project before being able to open it in GitTower' );
