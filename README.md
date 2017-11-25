@@ -22,7 +22,7 @@ It adds 1 command to the command palette:
 'Open in GitTower' // Open the current project in GitTower
 ```
 
-## Hits
+## Hints
 
 - **[Projects+](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-projects-plus)**: use this extension for managing your projects, it comes with GitTower support.
 
