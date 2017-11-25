@@ -3,7 +3,7 @@
   "displayName": "Open in GitTower",
   "description": "Adds a command for opening the current project in GitTower.",
   "icon": "resources/logo-128x128.png",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "license": "MIT",
   "main": "out/src/extension.js",
   "publisher": "fabiospampinato",

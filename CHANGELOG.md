@@ -1,3 +1,6 @@
+### Version 1.2.4
+- Fixed a typo
+
 ### Version 1.2.3
 - Properly getting the path of the currently active document
 
