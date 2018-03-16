@@ -1,4 +1,4 @@
-# VSC Open in GitTower
+# Open in GitTower
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-open-in-gittower/master/resources/logo-128x128.png" alt="Logo">
@@ -8,10 +8,10 @@ Adds a command for opening the current project in [GitTower](https://www.git-tow
 
 ## Install
 
-Run the following in the command palette:
+Follow the instructions in the [Marketplace](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-gittower), or run the following in the command palette:
 
 ```shell
-ext install vscode-open-in-gittower
+ext install fabiospampinato.vscode-open-in-gittower
 ```
 
 ## Usage
