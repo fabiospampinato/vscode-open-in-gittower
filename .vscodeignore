@@ -8,3 +8,5 @@ resources/*.psd
 src/**
 test/**
 tsconfig.json
+webpack.config.js
+webpack.config.js
