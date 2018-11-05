@@ -1,7 +1,7 @@
 # Open in GitTower
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-open-in-gittower/master/resources/logo-128x128.png" alt="Logo">
+	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-open-in-gittower/master/resources/logo.png" width="128" alt="Logo">
 </p>
 
 Adds a command for opening the current project in [GitTower](https://www.git-tower.com).
