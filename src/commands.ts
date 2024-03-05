@@ -1,33 +1,30 @@
 
 /* IMPORT */
 
-import * as openPath from 'open';
-import * as vscode from 'vscode';
-import Utils from './utils';
+import fs from 'node:fs';
+import path from 'node:path';
+import process from 'node:process';
+import openPath from 'open';
+import vscode from 'vscode';
+import {getProjectRootPath} from 'vscode-extras';
 
-/* COMMANDS */
+/* MAIN */
 
-async function open () {
+const open = async (): Promise<void> => {
 
-  const {activeTextEditor} = vscode.window,
-        editorPath = activeTextEditor && activeTextEditor.document.uri.fsPath,
-        rootPath = Utils.folder.getRootPath ( editorPath );
+  const rootPath = getProjectRootPath ();
 
-  if ( !rootPath ) return vscode.window.showErrorMessage ( 'You have to open a project before being able to open it in GitTower' );
+  if ( !rootPath ) return void vscode.window.showErrorMessage ( 'You have to open a project before being able to open it in GitTower' );
 
-  const projectPath = await Utils.folder.getWrapperPathOf ( rootPath, editorPath || rootPath, '.git' );
+  const gitPath = path.join ( rootPath, '.git' );
 
-  if ( projectPath ) {
+  if ( !fs.existsSync ( gitPath ) ) return void vscode.window.showErrorMessage ( 'The project needs to be a git repository for opening it in GitTower' );
 
-    openPath ( projectPath, 'Tower' );
+  const appName = ( process.platform === 'darwin' ) ? 'Tower' : 'tower';
 
-  } else {
+  await openPath ( rootPath, { app: { name: appName } } );
 
-    vscode.window.showErrorMessage ( 'The project needs to be a git repository for opening it in GitTower' );
-
-  }
-
-}
+};
 
 /* EXPORT */
 

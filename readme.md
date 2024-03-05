@@ -22,16 +22,6 @@ It adds 1 command to the command palette:
 'Open in GitTower' // Open the current project in GitTower
 ```
 
-## Hints
-
-- **[Projects+](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-projects-plus)**: use this extension for managing your projects, it comes with GitTower support.
-
-## Contributing
-
-If you found a problem, or have a feature request, please open an [issue](https://github.com/fabiospampinato/vscode-open-in-gittower/issues) about it.
-
-If you want to make a pull request you can debug the extension using [Debug Launcher](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-debug-launcher).
-
 ## License
 
 MIT © Fabio Spampinato
