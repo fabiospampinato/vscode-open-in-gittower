@@ -5,7 +5,7 @@
   "repository": "github:fabiospampinato/vscode-open-in-gittower",
   "description": "Adds a command for opening the current project in GitTower.",
   "icon": "resources/logo-128x128.png",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "dist/index.js",
   "contributes": {
     "commands": [

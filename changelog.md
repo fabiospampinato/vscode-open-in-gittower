@@ -1,3 +1,6 @@
+### Version 2.0.0
+- Rewitten: more modern code, almost no third-party dependencies, 98% smaller bundle
+
 ### Version 1.2.8
 - Readme: using hi-res logo
 
