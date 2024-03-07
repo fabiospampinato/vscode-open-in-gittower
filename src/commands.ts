@@ -4,13 +4,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import openPath from 'open';
+import openPath from 'tiny-open';
 import vscode from 'vscode';
 import {getProjectRootPath} from 'vscode-extras';
 
 /* MAIN */
 
-const open = async (): Promise<void> => {
+const open = (): void => {
 
   const rootPath = getProjectRootPath ();
 
@@ -20,9 +20,9 @@ const open = async (): Promise<void> => {
 
   if ( !fs.existsSync ( gitPath ) ) return void vscode.window.showErrorMessage ( 'The project needs to be a git repository for opening it in GitTower' );
 
-  const appName = ( process.platform === 'darwin' ) ? 'Tower' : 'tower';
+  const app = ( process.platform === 'darwin' ) ? 'Tower' : 'tower';
 
-  await openPath ( rootPath, { app: { name: appName } } );
+  openPath ( rootPath, { app } );
 
 };
 
